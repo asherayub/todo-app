@@ -3,9 +3,21 @@ const generateUl = document.querySelector(".todo-list")
 const createUl = document.createElement("ul")
 const task = document.querySelector("input")
 
+// for delete confirmation
+const btnYes = document.querySelector(".del-yes")
+const btnNo = document.querySelector(".del-no")
+const deleteAll = document.querySelector(".delete-all-btn")
 
 
 add.addEventListener("click", () => {
+    if(task.value == ""){
+        document.querySelector(".header .error").textContent = "Please Write a task to add"
+        document.querySelector(".header .error").style.color = "red"
+    }
+    else{
+        document.querySelector(".header .error").textContent = "Coded in JavaScript"
+        document.querySelector(".header .error").style.color = "black"
+
     const liWrapper = document.createElement("div")
     const addLi = document.createElement("li")
     const delIcon = document.createElement("i")
@@ -27,6 +39,7 @@ add.addEventListener("click", () => {
             compl.classList.add("completed")
         })
     })
+}
 
     let deleteTask = document.querySelectorAll(".remove")
     deleteTask.forEach(del => {
@@ -38,8 +51,16 @@ add.addEventListener("click", () => {
 
 })
 
-const deleteAll = document.querySelector(".delete-all")
 deleteAll.addEventListener("click", () => {
-    document.querySelector("ul").textContent = "";
-    document.querySelector("ul").remove();
+    document.querySelector(".delete-all").classList.remove("d-none")
+
+})
+
+btnYes.addEventListener("click", () => {
+    document.querySelector("ul").textContent = ""
+    document.querySelector("ul").remove()
+    document.querySelector(".delete-all").classList.add("d-none")
+})
+btnNo.addEventListener("click", () => {
+    document.querySelector(".delete-all").classList.add("d-none")
 })

@@ -8,6 +8,11 @@
     <meta name="Description" content="Enter your description here" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!----------------->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Title</title>
 </head>
@@ -16,16 +21,23 @@
     <div class="container-fluid">
         <div class="header mt-5 text-center">
             <h1>Welcome to TODO List App</h1>
-            <h2>Coded in JavaScript</h2>
+            <p class="error">Coded in JavaScript</p>
             <p>Coded By <a class="text-uppercase text-black-50" href="https://www.github.com/asherayub"
                     target="_blank">asher ayub</a></p>
         </div>
         <div class="container">
+            <div class="delete-all d-none">
+                <p>Delete all Entries?</p>
+                <div class="del-btns">
+                    <button class="del del-yes">Yes</button>
+                    <button class="del del-no">No</button>
+                </div>
+            </div>
             <div class="todo-app-body">
                 <input type="text">
                 <div class="add-remove">
                     <i class="fas fa-marker add"></i>
-                    <i class="fa fa-trash-alt delete-all" aria-hidden="true"></i>
+                    <i class="fa fa-trash-alt delete-all-btn" aria-hidden="true"></i>
                 </div>
             </div>
             <i class="fa fa-info fa-sm" aria-hidden="true"></i>
